@@ -4,6 +4,6 @@ import 'package:twitter_client/twitter_client.dart';
 
 void main() {
   test('Set keys statically', () {
-    TwitterClient.consumerKey = "";
+    TwitterClient.setKeys("", "");
   });
 }

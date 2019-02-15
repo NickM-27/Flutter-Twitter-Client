@@ -4,6 +4,8 @@ import 'package:crypto/crypto.dart';
 import 'package:flutter_twitter_login/flutter_twitter_login.dart';
 import 'package:http/http.dart' as http;
 import 'package:random_string/random_string.dart';
+import 'package:twitter_client/twitter/trend.dart';
+import 'package:twitter_client/twitter/tweet.dart';
 import 'package:twitter_client/twitter/user.dart';
 
 class TwitterClient {
@@ -104,7 +106,7 @@ class TwitterClient {
     return await http
         .get(new Uri.https("api.twitter.com", base, paramMap), headers: {
       "Authorization":
-      'Oauth $oauthConsumer, $oauthNonce, $oauthSig, $oauthMethod, $oauthTime, $oauthToken, $oauthVersion',
+          'Oauth $oauthConsumer, $oauthNonce, $oauthSig, $oauthMethod, $oauthTime, $oauthToken, $oauthVersion',
       "Content-Type": "application/json"
     }).timeout(Duration(seconds: 15));
   }
@@ -146,7 +148,7 @@ class TwitterClient {
     return await http
         .post(new Uri.https("api.twitter.com", base, paramMap), headers: {
       "Authorization":
-      'Oauth $oauthConsumer, $oauthNonce, $oauthSig, $oauthMethod, $oauthTime, $oauthToken, $oauthVersion',
+          'Oauth $oauthConsumer, $oauthNonce, $oauthSig, $oauthMethod, $oauthTime, $oauthToken, $oauthVersion',
       "Content-Type": "application/json"
     }).timeout(Duration(seconds: 15));
   }
